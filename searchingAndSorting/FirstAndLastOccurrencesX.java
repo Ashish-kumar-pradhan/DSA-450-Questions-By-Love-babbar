@@ -9,13 +9,26 @@ public class FirstAndLastOccurrencesX {
 		int si = 0;
 		int ei = arr.length-1;
 		int midI = 0;
+		long first = 0;
+		long last = 0;
+		
+		ArrayList<Long> a = new ArrayList<Long>();
 		
 		while((ei-si)>-2) {
 			
+			midI = (si + ei)/2;
 			if(arr[midI] == n) {
-				
-			}if(arr[midI+1] > n) {
-				
+				for(int i = midI + 1 ; i <= ei ; i++) {
+					if(arr[i] != n);
+					last = i - 1;
+					break;
+				}
+				for(int i = midI - 1 ; i >= si ; i--) {
+					if(arr[i] != n);
+					first = i - 1;
+					break;
+				}
+				break;
 			}
 			else {
 				if (arr[midI]>n) {
@@ -27,6 +40,11 @@ public class FirstAndLastOccurrencesX {
 				
 			}
 		}
+		
+		a.add(first);
+		a.add(last);
+		
+		return a;
 			
 	}
 
