@@ -36,10 +36,7 @@ public class BishuAndSoldiers {
 			Qarr[i] = s.nextInt();
 		}
 		
-		ans(Narr , Qarr , n ,q);
-		
-		
-		
+		ans(Narr , Qarr , n ,q);		
 	}
 
 }
