@@ -31,11 +31,9 @@ public class NextPermutation {
 		for(int i = 0 ; i < arr.length ; i++) {
 			if(i <= li) {
 				lst.add(arr[i]);
-//				System.out.println(arr[i]);
 			}
 			else {
 				lst.add(arr[arr.length + li - i]);
-//				System.out.println(arr[arr.length + li - i]);
 			}
 			
 		}
