@@ -1,4 +1,4 @@
-package dp;
+package binaryTrees;
 
 public class SumTree {
 	
