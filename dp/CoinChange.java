@@ -3,6 +3,10 @@ package dp;
 public class CoinChange {
 	
 	public static long countR(int S[], int m, int n) {
+		return countRHelp(S , m , n , 0);
+	}
+	
+	public static long countRHelp(int S[], int m, int n , int pastCoinIndex) {
 		if(n < 0) {
 			return 0;
 		}
@@ -10,8 +14,8 @@ public class CoinChange {
 			return 1;
 		}
 		long count = 0; 
-		for(int i = 0 ; i < m ; i++) {
-			count += countR(S , m , n - S[i]);
+		for(int i = pastCoinIndex ; i < m ; i++) {
+			count += countRHelp(S , m , n - S[i] , i);
 		}
 		return count;
 	}
