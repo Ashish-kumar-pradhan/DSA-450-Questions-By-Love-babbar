@@ -20,6 +20,36 @@ public class CoinChange {
 		return count;
 	}
 	
+	public static long countM(int S[], int m, int n) {
+		long memo[] = new long[n + 1];
+		memo[0] = 1;
+		for(int i = 1 ; i <= n ; i++) {
+			memo[i] = -1;
+		}
+		return countMHelp(S , m , n , 0 , memo);
+	}
+	
+	public static long countMHelp(int S[], int m, int n , int pastCoinIndex , long[] memo) {
+		if(n < 0) {
+			return 0;
+		}
+		
+		long count = 0;
+		for(int i = pastCoinIndex ; i < m ; i++) {
+			if(n >= S[i] && memo[n - S[i]] != -1) {
+				count += memo[n - S[i]];
+			}
+			else {
+				count += countMHelp(S , m , n - S[i] , i , memo);
+			}
+			
+		}
+		memo[n] = count;
+		return memo[n];
+		
+		
+	}
+	
 	public static long countDP(int S[], int m, int n) 
     { 
   
@@ -43,7 +73,7 @@ public class CoinChange {
 		// TODO Auto-generated method stub
 		
 		int S[] ={1,2,3};
-		System.out.println(countR(S , 3 , 4));
+		System.out.println(countM(S , 3 , 4));
 
 	}
 
