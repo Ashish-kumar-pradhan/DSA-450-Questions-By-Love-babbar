@@ -14,7 +14,7 @@ public class FriendsPairingProblem {
 	
 	public static long countFriendsPairingsMHelper(int n , long dp[]) 
     {
-		if(n == 1 || n == 2) {
+		if(n == 0 ||n == 1 || n == 2) {
 			dp[n] = n;
 			return dp[n];
 		}
@@ -31,11 +31,23 @@ public class FriendsPairingProblem {
 		long dp[] = new long[n + 1];
 		return countFriendsPairingsMHelper(n , dp);
     }
+	
+	public static long countFriendsPairingsDP(int n) {
+		long dp[] = new long[n + 1];
+		dp[0] = 1;
+		dp[0] = 1;
+		
+		for(int i = 2 ; i <= n ; i++) {
+			dp[i] = (dp[i-1] + (i-1)*dp[i - 2])%1000000007;
+		}
+		
+		return dp[n];
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println(countFriendsPairingsM(5));
+		System.out.println(countFriendsPairingsDP(5));
 
 	}
 
