@@ -61,41 +61,36 @@ public class CommonElementsIn3SortedArray {
 				k++;
 			}
 			
-			
-			if(i > 0) {
+			if(i > 0 && i < n1) {
 				int xx = A[i - 1];
 				while (A[i] == xx ) {
-					if(i >= n1 - 2) {
+					i++;
+					if(i >= n1) {
 						break;
 					}
-					i++;
 				}
 			}
 			
-			if(j > 0) {
+			if(j > 0 && j < n2) {
 				int yy = B[j-1];
 				while (B[j] == yy) {
-					if(j >= n2 - 2) {
+					j++;
+					if(j >= n2) {
 						break;
 					}
-					j++;
 				}
 			}
 			
 			
-			if(k > 0) {
+			if(k > 0 && k < n3) {
 				int zz = C[k - 1];
 				while (C[k] == zz) {
-					if(k >= n3 - 2) {
+					k++;
+						if(k >= n3) {
 						break;
 					}
-					k++;
 				}
 			}
-			
-			
-			
-			
 		}
 		
 		return arr;
@@ -110,7 +105,7 @@ public class CommonElementsIn3SortedArray {
 		ArrayList<Integer> arr = commonElem2(a , b , c , 3 , 3, 4);
 		
 		for(int i = 0 ; i < arr.size() ; i++) {
-			System.out.print(arr);
+			System.out.print(arr.get(i) + " ");
 		}
 		
 
