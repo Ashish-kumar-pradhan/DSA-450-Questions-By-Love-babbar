@@ -11,9 +11,7 @@ public class LongestCommonSubstring {
                 if(S1.charAt(i-1) == S2.charAt(j-1)){
                     dp[i][j] = 1 + dp[i-1][j-1];
                 }
-                if(dp[i][j] > max){
-                    max = dp[i][j];
-                }
+                if(dp[i][j] > max) max = dp[i][j];
             }
         }
         return max;
