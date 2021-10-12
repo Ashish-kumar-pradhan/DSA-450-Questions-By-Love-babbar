@@ -1,5 +1,7 @@
 package greedy;
 
+import java.util.Arrays;
+
 public class SwapAndMaximize {
 	
 	long maxSum(long arr[] ,int n)
